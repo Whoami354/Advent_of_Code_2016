@@ -16,9 +16,10 @@ while '' in password:
             position = int(position)
             if position < 8 and password[position] == '':
                 password[position] = result[6]
-
+                print(password)
 
     idx += 1
 
-stringIdx = str(idx)
-print(password)
+stringPWD = ''.join(password)
+print(stringPWD)
+
