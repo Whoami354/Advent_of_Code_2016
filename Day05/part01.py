@@ -12,8 +12,6 @@ while len(sumPasswd) < 8:
     result = hashlib.md5(hashValue.encode('utf-8')).hexdigest()
     if result.startswith("00000"):
         sumPasswd += result[5]
-
-
     idx += 1
 
 stringIdx = str(idx)
