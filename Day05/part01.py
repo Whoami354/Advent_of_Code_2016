@@ -14,5 +14,4 @@ while len(sumPasswd) < 8:
         sumPasswd += result[5]
     idx += 1
 
-stringIdx = str(idx)
 print(sumPasswd)
