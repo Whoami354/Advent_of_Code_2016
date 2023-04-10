@@ -7,6 +7,7 @@ for line in lines:
         if letter in letters:
             letters[letter] += 1
         else:
+            assert not letter in letters
             letters[letter] = 1
 
     print(max(letters))
