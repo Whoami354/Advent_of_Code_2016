@@ -1,4 +1,5 @@
 import re
+
 lines = open("input", "r", encoding='utf-8').read().strip().split('\n')
 count = 0
 
@@ -22,10 +23,10 @@ for line in lines:
     patternInBrackets = False
     patternOutBrackets = False
     for word in wordsInBrackets:
-        if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1' , word):
+        if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
             patternInBrackets = True
     for word in wordsInNoBrackets:
-        if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1' , word):
+        if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
             patternOutBrackets = True
     if patternOutBrackets and not patternInBrackets:
         count += 1
