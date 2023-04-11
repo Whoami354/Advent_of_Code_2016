@@ -28,5 +28,5 @@ for line in lines:
         if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1' , word):
             patternOutBrackets = True
     if patternOutBrackets and not patternInBrackets:
-        count += 1
+        count += 2
 print(count)
