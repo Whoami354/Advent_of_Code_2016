@@ -6,6 +6,6 @@ for i in range(8):
     letters = defaultdict(int)
     for line in lines:
         letters[line[i]] += 1
-    message += max(letters, key=letters.get)
+    message += min(letters, key=letters.get)
 
 print(message)
