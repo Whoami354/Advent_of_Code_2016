@@ -20,14 +20,14 @@ for line in lines:
             if len(wordsInNoBrackets) == 0:
                 wordsInNoBrackets.append('')
             wordsInNoBrackets[-1] += character
-    patternInBrackets = False
-    patternOutBrackets = False
+    ispatternInBrackets = False
+    ispatternOutBrackets = False
     for word in wordsInBrackets:
         if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
-            patternInBrackets = True
+            ispatternInBrackets = True
     for word in wordsInNoBrackets:
         if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
-            patternOutBrackets = True
-    if patternOutBrackets and not patternInBrackets:
+            ispatternOutBrackets = True
+    if ispatternOutBrackets and not ispatternInBrackets:
         count += 1
 print(count)
