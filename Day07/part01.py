@@ -23,10 +23,10 @@ for line in lines:
     ispatternInBrackets = False
     ispatternOutBrackets = False
     for word in wordsInBrackets:
-        if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
+        if re.search(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
             ispatternInBrackets = True
     for word in wordsInNoBrackets:
-        if re.findall(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
+        if re.search(r'([a-zA-Z])(?!\1)([a-zA-Z])\2\1', word):
             ispatternOutBrackets = True
     if ispatternOutBrackets and not ispatternInBrackets:
         count += 1
