@@ -45,4 +45,3 @@ while stack:
     send_value(higher_connection, high_value)
 
 print(f"I'm Bot {wanted_bot}, and I'm responsible for microchips 17 and 61.")
-print('....')
