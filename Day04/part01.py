@@ -19,7 +19,6 @@ for line in lines:
     for i in checkTheLetters:
         checkLastLetters += i
     checkLastLetters = checkLastLetters[:5]
-    print(checkLastLetters)
     if checkLastLetters == commonLetters:
         sumRealRooms += roomID
 print(sumRealRooms)
