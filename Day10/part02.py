@@ -35,8 +35,6 @@ for line in initial:
 while stack:
     name = stack.pop()
     low_value, high_value = sorted(bots[name])
-    if low_value == 17 and high_value == 61:
-        wanted_bot = name
     lower_connection, higher_connection = connections[name]
     send_value(lower_connection, low_value)
     send_value(higher_connection, high_value)
