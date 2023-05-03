@@ -17,11 +17,12 @@ idx = 0
 
 while found < 64:
     hash1 = calculateHash(input_hashing, idx)
-    m = re.search(r'([a-z0-9]{1})\1\1', hash1)
+    m = re.search(r"(\w)\1\1", hash1)
     if m != None:
+        m = m.group(1)
         for i in range(idx + 1, idx + 1000):
             hash2 = calculateHash(input_hashing, i)
-            n = re.search(r'(' + m.group(1) + '{1})\\1{4}', hash2)
+            n = re.search(m * 5, hash2)
             if n != None:
                 found += 1
                 break
