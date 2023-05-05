@@ -1,7 +1,7 @@
 input = "00111101111101000"
 disk_size = 272
 
-def dragon_cuve(data, size):
+def dragon_curve(data, size):
     while len(data) < size:
         a = data
         b = a[::-1].translate(str.maketrans("01", "10"))
