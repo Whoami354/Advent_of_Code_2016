@@ -1,13 +1,12 @@
-from functools import lru_cache
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib import animation
-from functools import partial
-from collections import deque
-from sortedcontainers.sortedset import SortedSet
-from collections import defaultdict
 import math
 import sys
+from collections import defaultdict, deque
+from functools import lru_cache, partial
+
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib import animation
+from sortedcontainers.sortedset import SortedSet
 
 favorite_number = 1358
 target = (31, 39)
@@ -83,15 +82,18 @@ def BFS():
         if can_explore(x, y + 1):
             queue.append((x, y + 1, new_path))
 
-        if target == (x,y):
+        if target == (x, y):
             print("Länge von Path", len(path))
             break
+
+
 @lru_cache
 def optimal_distance(x, y):
     """
     returns the underestimation of the path to the target node
     """
     return abs(x - target[0]) + abs(y - target[1])
+
 
 def A_STAR():
     def recreate_path(current, previous_dict):
@@ -141,6 +143,7 @@ def A_STAR():
         handle_neighbour(x, y - 1, current)
         handle_neighbour(x, y + 1, current)
     print("queue empty", to_explore)
+
 
 if __name__ == "__main__":
     path_gen = A_STAR()

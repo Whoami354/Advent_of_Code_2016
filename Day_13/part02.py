@@ -85,6 +85,7 @@ def BFS():
             print("Länge von Path", len(visited) - 1)
             break
 
+
 if __name__ == "__main__":
     path_gen = BFS()
     anim = animation.FuncAnimation(
