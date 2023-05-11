@@ -18,7 +18,6 @@ while True:
     new = []
     for idx, x in enumerate(discs):
         value = (x + time + 1 + idx) % positions[idx]
-        print("idx:", idx, "x:", x)
         new.append(value)
 
     #print(new)
